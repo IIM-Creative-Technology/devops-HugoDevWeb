@@ -22,6 +22,8 @@ jobs:
           args: analyse src/ --level=0
       - name: Heroku's Deploy
         uses: akhileshns/heroku-deploy@v3.5.6 # This is the action
+      - name: PHPUnit tests
+        uses: php-actions/phpunit@v9
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: ${{secrets.HEROKU_APP}}
